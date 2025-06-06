@@ -44,7 +44,7 @@ const HomePage = () => {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
-      const res = await axios.post("/transections/get-transection", {
+      const res = await axios.post("https://finance-manager-ajlr.onrender.com/transections/get-transection", {
         userid: user._id,
         frequency,
         selectedDate,
@@ -66,7 +66,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post("/transections/delete-transection", {
+      await axios.post("https://finance-manager-ajlr.onrender.com/transections/delete-transection", {
         transactionId: record._id,
       });
       message.success("Transaction Deleted");
@@ -83,7 +83,7 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem("user"));
       setLoading(true);
       if (editable) {
-        await axios.post("/transections/edit-transection", {
+        await axios.post("https://finance-manager-ajlr.onrender.com/transections/edit-transection", {
           payload: {
             ...values,
             userId: user._id,
@@ -92,7 +92,7 @@ const HomePage = () => {
         });
         message.success("Transaction Updated Successfully");
       } else {
-        await axios.post("/transections/add-transection", {
+        await axios.post("https://finance-manager-ajlr.onrender.com/transections/add-transection", {
           ...values,
           userid: user._id,
         });
