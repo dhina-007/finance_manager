@@ -12,7 +12,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("/users/login", values);
+      const { data } = await axios.post("https://finance-manager-ajlr.onrender.com/users/login", values);
       setLoading(false);
       message.success("Login success");
       localStorage.setItem(
