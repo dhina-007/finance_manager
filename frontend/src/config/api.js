@@ -5,7 +5,7 @@ const resolveBaseUrl = () => {
   if (fromEnv && fromEnv.trim()) {
     return trimTrailingSlashes(fromEnv.trim());
   }
-  return "http://localhost:8080/api/v1";
+  return "https://expense-manager-backend-c3cz.onrender.com/api/v1";
 };
 
 export const API_BASE_URL = resolveBaseUrl();
