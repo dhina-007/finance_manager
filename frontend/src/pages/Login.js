@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { apiUrl } from "../config/api";
 import Spinner from "../components/Spinner";
 import "../index.css";
 
@@ -12,7 +13,7 @@ const Login = () => {
   const submitHandler = async (values) => {
     try {
       setLoading(true);
-      const { data } = await axios.post("https://finance-manager-ajlr.onrender.com/users/login", values);
+      const { data } = await axios.post(apiUrl("/users/login"), values);
       setLoading(false);
       message.success("Login success");
       localStorage.setItem(

@@ -18,12 +18,13 @@ const transectionSchema = new mongoose.Schema(
       type: String,
       required: [true, "cat is required"],
     },
-    refrence: {
+    reference: {
       type: String,
+      default: "",
     },
     description: {
       type: String,
-      required: [true, "desc is required"],
+      default: "",
     },
     date: {
       type: Date,
